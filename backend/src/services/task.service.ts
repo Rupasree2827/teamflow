@@ -50,3 +50,38 @@ export const getTasks = async () => {
     },
   });
 };
+
+export const updateTaskStatus = async (
+  id: string,
+  status: "TODO" | "IN_PROGRESS" | "DONE"
+) => {
+  return prisma.task.update({
+    where: {
+      id,
+    },
+    data: {
+      status,
+    },
+  });
+};
+
+export const updateTask = async (
+  id: string,
+  data: {
+    title?: string;
+    description?: string;
+    priority?: "LOW" | "MEDIUM" | "HIGH";
+    dueDate?: string;
+    assignedToId?: string;
+  }
+) => {
+  return prisma.task.update({
+    where: {
+      id,
+    },
+    data: {
+      ...data,
+      dueDate: data.dueDate ? new Date(data.dueDate) : undefined,
+    },
+  });
+};
