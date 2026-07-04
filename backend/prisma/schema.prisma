@@ -13,6 +13,18 @@ enum Role {
   EMPLOYEE
 }
 
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
 model User {
   id           String   @id @default(cuid())
   name         String
@@ -22,6 +34,7 @@ model User {
   profileImage String?
   createdAt    DateTime @default(now())
   teams Team[]
+  assignedTasks Task[]
 }
 
 model Team {
@@ -43,4 +56,22 @@ model Project {
 
   teamId      String
   team         Team @relation(fields: [teamId], references: [id])
+  tasks Task[]
+}
+
+model Task {
+  id          String       @id @default(cuid())
+  title       String
+  description String?
+  status      TaskStatus   @default(TODO)
+  priority    TaskPriority @default(MEDIUM)
+  dueDate     DateTime?
+
+  createdAt   DateTime @default(now())
+
+  projectId   String
+  project     Project @relation(fields: [projectId], references: [id])
+
+  assignedToId String
+  assignedTo   User @relation(fields: [assignedToId], references: [id])
 }
