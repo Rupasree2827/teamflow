@@ -4,6 +4,7 @@ import {
   getTasks,
   updateTaskStatus,
   updateTask,
+  deleteTask,
 } from "../services/task.service";
 
 export const create = async (req: Request, res: Response) => {
@@ -70,6 +71,22 @@ export const update = async (req: Request, res: Response) => {
       success: true,
       message: "Task updated successfully",
       data: task,
+    });
+  } catch (error: any) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+export const remove = async (req: Request, res: Response) => {
+  try {
+    await deleteTask(String(req.params.id));
+
+    res.status(200).json({
+      success: true,
+      message: "Task deleted successfully",
     });
   } catch (error: any) {
     res.status(400).json({

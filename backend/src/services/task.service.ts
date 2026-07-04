@@ -85,3 +85,11 @@ export const updateTask = async (
     },
   });
 };
+
+export const deleteTask = async (id: string) => {
+  return prisma.task.delete({
+    where: {
+      id,
+    },
+  });
+};

@@ -4,6 +4,7 @@ import {
   getAll,
   updateStatus,
   update,
+  remove,
 } from "../controllers/task.controller";
 import { authenticate } from "../middlewares/auth.middleware";
 
@@ -18,5 +19,6 @@ router.get("/", authenticate, getAll);
 // Update Task Status
 router.patch("/:id/status", authenticate, updateStatus);
 router.put("/:id", authenticate, update);
+router.delete("/:id", authenticate, remove);
 
 export default router;
