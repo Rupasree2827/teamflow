@@ -256,37 +256,37 @@ npm run dev
 
 ## 🔐 Login
 
-
+![Login](Screenshots/login%20page.png)
 
 ---
 
 ## 📊 Dashboard
 
-Screenshots/Dashboard.png
+![Dashboard](Screenshots/Dashboard.png)
 
 ---
 
 ## Teams
 
-![Teams](screenshots/Teams.png)
+![Teams](Screenshots/Teams.png)
 
 ---
 
 ## Projects
 
-![Projects](screenshots/Projects.png)
+![Projects](Screenshots/Projects.png)
 
 ---
 
 ## Tasks
 
-![Tasks](screenshots/Tasks.png)
+![Tasks](Screenshots/Tasks.png)
 
 ---
 
 ## Profile
 
-![Profile](screenshots/Profile.png)
+![Profile](Screenshots/Profile.png)
 
 ---
 
