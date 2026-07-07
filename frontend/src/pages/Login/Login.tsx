@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../services/auth.service";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 import {
   Mail,
@@ -178,6 +179,15 @@ localStorage.setItem(
               <ArrowRight size={20} />
 
             </button>
+            <p className="text-center mt-6 text-white">
+  Don't have an account?{" "}
+  <Link
+    to="/register"
+    className="font-semibold underline"
+  >
+    Register
+  </Link>
+</p>
 
             <div className="text-center mt-8 text-gray-300 text-sm">
               © 2026 TeamFlow • Full Stack Project by Rupa
