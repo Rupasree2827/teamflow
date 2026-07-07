@@ -256,13 +256,13 @@ npm run dev
 
 ## 🔐 Login
 
-![Login](screenshots/login page.png)
+
 
 ---
 
 ## 📊 Dashboard
 
-![Dashboard](screenshots/Dashboard.png)
+Screenshots/Dashboard.png
 
 ---
 
