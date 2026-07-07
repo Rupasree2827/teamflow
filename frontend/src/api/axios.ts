@@ -1,10 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:4000/api",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "https://teamflow-backend-l2im.onrender.com/api",
 });
 
 export default api;
