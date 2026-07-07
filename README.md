@@ -254,37 +254,39 @@ npm run dev
 
 ## Login Page
 
-(Add Screenshot)
+## 🔐 Login
+
+![Login](screenshots/login page.png)
 
 ---
 
-## Dashboard
+## 📊 Dashboard
 
-(Add Screenshot)
+![Dashboard](screenshots/Dashboard.png)
 
 ---
 
 ## Teams
 
-(Add Screenshot)
+![Teams](screenshots/Teams.png)
 
 ---
 
 ## Projects
 
-(Add Screenshot)
+![Projects](screenshots/Projects.png)
 
 ---
 
 ## Tasks
 
-(Add Screenshot)
+![Tasks](screenshots/Tasks.png)
 
 ---
 
 ## Profile
 
-(Add Screenshot)
+![Profile](screenshots/Profile.png)
 
 ---
 
