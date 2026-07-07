@@ -35,3 +35,31 @@ export const getAllTeams = async () => {
     },
   });
 };
+
+export const deleteTeam = async (id: string) => {
+  return prisma.team.delete({
+    where: {
+      id,
+    },
+  });
+};
+
+interface UpdateTeamData {
+  name: string;
+  description?: string;
+}
+
+export const updateTeam = async (
+  id: string,
+  { name, description }: UpdateTeamData
+) => {
+  return prisma.team.update({
+    where: {
+      id,
+    },
+    data: {
+      name,
+      description,
+    },
+  });
+};

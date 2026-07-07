@@ -1,13 +1,20 @@
 import { Router } from "express";
-import { create, getTeams } from "../controllers/team.controller";
+import {
+  create,
+  getTeams,
+  remove,
+  update,
+} from "../controllers/team.controller";
 import { authenticate } from "../middlewares/auth.middleware";
 
 const router = Router();
 
-// Create Team
 router.post("/", authenticate, create);
 
-// Get All Teams
 router.get("/", authenticate, getTeams);
+
+router.put("/:id", authenticate, update);
+
+router.delete("/:id", authenticate, remove);
 
 export default router;

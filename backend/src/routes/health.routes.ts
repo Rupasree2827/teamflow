@@ -4,8 +4,9 @@ const router = Router();
 
 router.get("/", (req, res) => {
   res.status(200).json({
-    success: true,
-    message: "TeamFlow Backend is Running 🚀",
+    status: "OK",
+    message: "TeamFlow API is running successfully",
+    timestamp: new Date().toISOString(),
   });
 });
 

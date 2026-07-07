@@ -6,20 +6,23 @@ interface CreateProjectData {
   teamId: string;
 }
 
+interface UpdateProjectData {
+  name: string;
+  description?: string;
+}
+
 export const createProject = async ({
   name,
   description,
   teamId,
 }: CreateProjectData) => {
-  const project = await prisma.project.create({
+  return prisma.project.create({
     data: {
       name,
       description,
       teamId,
     },
   });
-
-  return project;
 };
 
 export const getProjects = async () => {
@@ -31,6 +34,29 @@ export const getProjects = async () => {
           name: true,
         },
       },
+    },
+  });
+};
+
+export const updateProject = async (
+  id: string,
+  { name, description }: UpdateProjectData
+) => {
+  return prisma.project.update({
+    where: {
+      id,
+    },
+    data: {
+      name,
+      description,
+    },
+  });
+};
+
+export const deleteProject = async (id: string) => {
+  return prisma.project.delete({
+    where: {
+      id,
     },
   });
 };

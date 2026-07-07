@@ -17,6 +17,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// Routes
 app.use("/health", healthRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/teams", teamRoutes);
